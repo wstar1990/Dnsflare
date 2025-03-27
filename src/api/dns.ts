@@ -35,6 +35,7 @@ export function listZoneDnsRecordAll(zoneId: string): LoadPageFunc<CloudflareDns
 export async function deleteRecord(payload: CloudflareDnsRecord): Promise<string | undefined> {
     const axios = useAxios()
     try {
+        console.log(payload); // Debugging: Log the payload object
         await axios.request({
             url: `zones/${payload.zoneId}/dns_records/${payload.id}`,
             method: 'delete',
