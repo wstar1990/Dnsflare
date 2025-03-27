@@ -32,12 +32,15 @@ export function listZoneDnsRecordAll(zoneId: string): LoadPageFunc<CloudflareDns
     }
 }
 
-export async function deleteRecord(payload: CloudflareDnsRecord): Promise<string | undefined> {
+//增加zoneId,单独传递
+//export async function deleteRecord(payload: CloudflareDnsRecord): Promise<string | undefined> {
+export async function deleteRecord(zoneId: string,payload: CloudflareDnsRecord): Promise<string | undefined> {
     const axios = useAxios()
     try {
-        console.log(payload); // Debugging: Log the payload object
+        //console.log(payload); // Debugging: Log the payload object
         await axios.request({
-            url: `zones/${payload.zoneId}/dns_records/${payload.id}`,
+            //url: `zones/${payload.zoneId}/dns_records/${payload.id}`,
+            url: `zones/${zoneId}/dns_records/${payload.id}`,
             method: 'delete',
         })
     }  catch (err) {
