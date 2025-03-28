@@ -197,6 +197,7 @@ function refresh() {
 
 async function changeProxied(record: CloudflareDnsRecord, proxied: boolean) {
     isLoading.value = true
+    //增加zoneId.value
     //const res = await patchRecord(record, {
     const res = await patchRecord(zoneId.value,record, {
         proxied,
