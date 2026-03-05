@@ -14,7 +14,7 @@
                 label="Token"
                 prop="token"
             >
-                <el-input v-model="model.token" />
+                <el-input v-model="model.token" type="password" />
             </el-form-item>
             <el-divider>或者</el-divider>
             <el-form-item
@@ -27,7 +27,7 @@
                 label="全局 Token"
                 prop="globalToken"
             >
-                <el-input v-model="model.globalToken" />
+                <el-input v-model="model.globalToken" type="password" />
             </el-form-item>
 
             <el-form-item label="记住凭证">
